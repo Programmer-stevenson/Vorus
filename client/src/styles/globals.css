@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --vorus-black: #0C0C0D;
+  --vorus-charcoal: #1F1F22;
+  --vorus-steel: #A9A9AE;
+  --vorus-white: #ECECEC;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--vorus-black);
+  color: var(--vorus-white);
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+  letter-spacing: 0.02em;
+}
+
+/* Chrome/Metallic Text Effect */
+.chrome-text {
+  background: linear-gradient(135deg, #C0C0C0, #E8E8E8, #A9A9AE, #D3D3D3);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Metallic Border Effect */
+.metallic-border {
+  border: 1px solid rgba(169, 169, 174, 0.2);
+  box-shadow: 0 0 20px rgba(169, 169, 174, 0.1);
+}
+
+/* Glass Effect */
+.glass-effect {
+  background: rgba(31, 31, 34, 0.4);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* Fog Overlay */
+.fog-overlay {
+  position: relative;
+}
+
+.fog-overlay::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at center, transparent 0%, rgba(12, 12, 13, 0.6) 100%);
+  pointer-events: none;
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--vorus-black);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--vorus-steel);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--vorus-white);
+}
+
+/* Selection */
+::selection {
+  background: rgba(169, 169, 174, 0.3);
+  color: var(--vorus-white);
+}
