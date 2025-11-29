@@ -28,7 +28,7 @@ const products = [
     subtitle: 'Warm & Spiced',
     description: 'A warmer interpretation of fiery leather, touch of heat, and creamy vanilla.',
     price: 195,
-    images: ['/flames.jpg', '/vorus-ember.jpg'],
+    images: ['/flames1.jpg', '/vorus-ember.jpg'],
     accentColor: '#f87171'
   }
 ];
