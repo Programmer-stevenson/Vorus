@@ -2,7 +2,7 @@
 
 A stunning, fully-responsive luxury cologne brand landing page built with the MERN stack, Framer Motion, and Tailwind CSS.
 
-![VORUS](https://images.unsplash.com/photo-1758871992965-836e1fb0f9bc?w=600)
+
 
 ## 🚀 Features
 
