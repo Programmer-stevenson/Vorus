@@ -351,7 +351,7 @@ export function Hero() {
             transition={{ duration: 1, delay: 0.6 }}
           >
             <h1 className="text-6xl md:text-8xl lg:text-9xl mb-4 md:mb-6 leading-none tracking-tight font-playfair">
-              VORUS
+              VORUS Noir
             </h1>
           </motion.div>
           
