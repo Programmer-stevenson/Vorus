@@ -709,8 +709,7 @@ export function Hero() {
             transition={{ duration: 1, delay: 0.8 }}
             className="text-base md:text-xl text-[#A9A9AE] leading-relaxed max-w-lg mb-8 md:mb-12"
           >
-            A bold eau de parfum merging midnight cityscapes, steel rain, and aged leather. 
-            Crafted for those who command the night.
+            A deep eau de parfum built on smoked woods, bright pepper spice, and glowing amber. Created for those who carry the strength of the forest after dark.
           </motion.p>
 
           {/* Features */}
