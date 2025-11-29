@@ -94,7 +94,7 @@ export function Hero() {
             : 'bg-transparent'
         }`}
       >
-        <div id='HOME' className="text-3xl chrome-text tracking-wider font-playfair">
+        <div  className="text-3xl chrome-text tracking-wider font-playfair">
           VORUS
         </div>
         
@@ -166,11 +166,11 @@ export function Hero() {
               {/* Menu Links */}
               <div className="flex flex-col p-6 gap-6">
                 <a 
-                  href="#collection" 
+                  href="#HOME" 
                   onClick={() => setIsMenuOpen(false)}
                   className="text-lg tracking-widest text-[#ECECEC] hover:text-[#4ade80] transition-colors duration-300"
                 >
-                  COLLECTION
+                  HOME
                 </a>
                 <a 
                   href="#about" 
@@ -350,7 +350,7 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.6 }}
           >
-            <h1 className="text-6xl md:text-8xl lg:text-9xl mb-4 md:mb-6 leading-none tracking-tight font-playfair">
+            <h1 id='HOME' className="text-6xl md:text-8xl lg:text-9xl mb-4 md:mb-6 leading-none tracking-tight font-playfair">
               VORUS Noir
             </h1>
           </motion.div>
