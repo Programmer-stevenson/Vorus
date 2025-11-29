@@ -16,37 +16,37 @@ export function CTASection() {
   }, []);
 
   return (
-    <section className="relative py-40 px-4 overflow-hidden">
+    <section className="relative py-20 md:py-40 px-4 overflow-hidden">
       {/* Dark gradient background */}
       <div className="absolute inset-0 bg-gradient-to-b from-[#0C0C0D] via-[#1F1F22] to-[#0C0C0D]"></div>
       
       {/* Radial glow effect */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(169,169,174,0.1)_0%,_transparent_70%)]"></div>
 
-      <div className="relative z-10 max-w-5xl mx-auto text-center">
+      <div className="relative z-10 max-w-5xl mx-auto text-center flex flex-col items-center">
         {/* Floating bottle */}
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 1, ease: "easeOut" }}
-          className="mb-12"
+          className="mb-12 w-full"
         >
           <motion.div
             animate={{ y: [0, -20, 0] }}
             transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-            className="relative inline-block"
+            className="relative mx-auto w-fit"
           >
             {/* Image container with crossfade */}
-            <div className="relative w-[28rem] md:w-[40rem] h-[28rem] md:h-[40rem] mx-auto">
+            <div className="relative w-[65vw] sm:w-[70vw] md:w-[50vw] max-w-[40rem] aspect-square mx-auto">
               <AnimatePresence mode="sync">
                 {images.map((src, index) => (
                   index === currentIndex && (
                     <motion.div
                       key={src}
-                      initial={{ opacity: 0, x: src === '/flames.jpg' ? 5 : 0 }}
-                      animate={{ opacity: 1, x: src === '/flames.jpg' ? 5 : 0 }}
-                      exit={{ opacity: 0, x: src === '/flames.jpg' ? 5 : 0 }}
+                      initial={{ opacity: 0, x: src === '/flames1.jpg' ? 8 : 0 }}
+                      animate={{ opacity: 1, x: src === '/flames1.jpg' ? 8 : 0 }}
+                      exit={{ opacity: 0, x: src === '/flames1.jpg' ? 8 : 0 }}
                       transition={{ duration: 0.8, ease: "easeInOut" }}
                       className="absolute inset-0 flex items-center justify-center"
                     >
