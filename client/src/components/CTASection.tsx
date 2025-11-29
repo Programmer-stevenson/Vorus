@@ -6,11 +6,19 @@ const images = ['/icey.jpg', '/norus-green.jpg', '/flames1.jpg'];
 
 export function CTASection() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % images.length);
-    }, 2500);
+    }, 5500);
 
     return () => clearInterval(interval);
   }, []);
@@ -33,27 +41,33 @@ export function CTASection() {
           className="mb-12 w-full"
         >
           <motion.div
-            animate={{ y: [0, -20, 0] }}
+            animate={isMobile ? {} : { y: [0, -20, 0] }}
             transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
             className="relative mx-auto w-fit"
           >
             {/* Image container with crossfade */}
             <div className="relative w-[65vw] sm:w-[70vw] md:w-[50vw] max-w-[40rem] aspect-square mx-auto">
-              <AnimatePresence mode="sync">
+              <AnimatePresence mode="wait">
                 {images.map((src, index) => (
                   index === currentIndex && (
                     <motion.div
                       key={src}
-                      initial={{ opacity: 0, x: src === '/flames1.jpg' ? 8 : 0 }}
-                      animate={{ opacity: 1, x: src === '/flames1.jpg' ? 8 : 0 }}
-                      exit={{ opacity: 0, x: src === '/flames1.jpg' ? 8 : 0 }}
-                      transition={{ duration: 0.8, ease: "easeInOut" }}
+                      initial={{ opacity: 0, scale: isMobile ? 1 : 0.95 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      exit={{ opacity: 0, scale: isMobile ? 1 : 1.05 }}
+                      transition={{ 
+                        duration: isMobile ? 0.4 : 1.2, 
+                        ease: isMobile ? "easeOut" : [0.22, 1, 0.36, 1]
+                      }}
                       className="absolute inset-0 flex items-center justify-center"
                     >
                       <ImageWithFallback
                         src={src}
                         alt="VORUS Bottle"
                         className="max-w-full max-h-full rounded-full object-contain drop-shadow-[0_0_60px_rgba(169,169,174,0.3)]"
+                        style={{ 
+                          marginLeft: src === '/flames1.jpg' ? '8px' : '0'
+                        }}
                       />
                     </motion.div>
                   )

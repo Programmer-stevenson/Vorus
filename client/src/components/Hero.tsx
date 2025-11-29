@@ -388,30 +388,22 @@ export function Hero() {
               <div 
                 className="absolute inset-0 pointer-events-none"
                 style={{
-                  background: 'radial-gradient(ellipse at center, rgba(34,85,51,0.25) 0%, transparent 60%)',
+                  background: isMobile ? 'none' : 'radial-gradient(ellipse at center, rgba(34,85,51,0.25) 0%, transparent 60%)',
                   transform: 'scale(1.4)',
                   filter: isMobile ? 'none' : 'blur(40px)',
                 }}
               />
 
-              {/* MOBILE: Enhanced layered animation - no blur filters */}
-              {isMobile && (
+              {/* MOBILE: Glow effects only during transformation */}
+              {isMobile && isTransforming && (
                 <>
-                  {/* Base ambient glow */}
-                  <motion.div
-                    className="absolute inset-0 pointer-events-none rounded-full"
-                    style={{
-                      background: 'radial-gradient(ellipse at center, rgba(52,140,80,0.25) 0%, transparent 60%)',
-                      transform: 'scale(1.3)',
-                    }}
-                  />
-
                   {/* Pulsing outer ring */}
                   <motion.div
                     className="absolute inset-0 pointer-events-none rounded-full"
+                    initial={{ opacity: 0, scale: 1.05 }}
                     animate={{
-                      opacity: isTransforming ? [0.3, 0.7, 0.9, 0.7, 0.3] : 0.3,
-                      scale: isTransforming ? [1.05, 1.2, 1.25, 1.2, 1.05] : 1.05,
+                      opacity: [0, 0.7, 0.9, 0.7, 0],
+                      scale: [1.05, 1.2, 1.25, 1.2, 1.05],
                     }}
                     transition={{ 
                       duration: 1.2, 
@@ -426,9 +418,10 @@ export function Hero() {
                   {/* Inner bright core */}
                   <motion.div
                     className="absolute inset-0 pointer-events-none rounded-full"
+                    initial={{ opacity: 0, scale: 1 }}
                     animate={{
-                      opacity: isTransforming ? [0.2, 0.6, 0.8, 0.6, 0.2] : 0.2,
-                      scale: isTransforming ? [1, 1.08, 1.12, 1.08, 1] : 1,
+                      opacity: [0, 0.6, 0.8, 0.6, 0],
+                      scale: [1, 1.08, 1.12, 1.08, 1],
                     }}
                     transition={{ 
                       duration: 1.2, 
@@ -443,10 +436,11 @@ export function Hero() {
                   {/* Rotating gradient ring 1 */}
                   <motion.div
                     className="absolute inset-0 pointer-events-none rounded-full"
+                    initial={{ rotate: 0, opacity: 0, scale: 1.1 }}
                     animate={{
-                      rotate: isTransforming ? 360 : 0,
-                      opacity: isTransforming ? [0, 0.7, 0.7, 0] : 0,
-                      scale: isTransforming ? [1.1, 1.2, 1.2, 1.25] : 1.1,
+                      rotate: 360,
+                      opacity: [0, 0.7, 0.7, 0],
+                      scale: [1.1, 1.2, 1.2, 1.25],
                     }}
                     transition={{ 
                       rotate: { duration: 1.2, ease: "easeInOut" },
@@ -461,10 +455,11 @@ export function Hero() {
                   {/* Counter-rotating ring 2 */}
                   <motion.div
                     className="absolute inset-0 pointer-events-none rounded-full"
+                    initial={{ rotate: 0, opacity: 0, scale: 1.05 }}
                     animate={{
-                      rotate: isTransforming ? -270 : 0,
-                      opacity: isTransforming ? [0, 0.5, 0.5, 0] : 0,
-                      scale: isTransforming ? [1.05, 1.12, 1.12, 1.15] : 1.05,
+                      rotate: -270,
+                      opacity: [0, 0.5, 0.5, 0],
+                      scale: [1.05, 1.12, 1.12, 1.15],
                     }}
                     transition={{ 
                       rotate: { duration: 1.2, ease: "easeInOut" },
@@ -481,10 +476,11 @@ export function Hero() {
                     <motion.div
                       key={`mobile-particle-${i}`}
                       className="absolute top-1/2 left-1/2 w-2 h-2 rounded-full pointer-events-none"
+                      initial={{ rotate: i * 90, opacity: 0, scale: 0.5 }}
                       animate={{
-                        rotate: isTransforming ? [i * 90, i * 90 + 180] : i * 90,
-                        opacity: isTransforming ? [0, 0.9, 0.9, 0] : 0,
-                        scale: isTransforming ? [0.5, 1, 1, 0.5] : 0.5,
+                        rotate: i * 90 + 180,
+                        opacity: [0, 0.9, 0.9, 0],
+                        scale: [0.5, 1, 1, 0.5],
                       }}
                       transition={{
                         duration: 1.2,
@@ -502,9 +498,10 @@ export function Hero() {
                   {/* Flash burst at peak */}
                   <motion.div
                     className="absolute inset-0 pointer-events-none rounded-full"
+                    initial={{ opacity: 0, scale: 0.9 }}
                     animate={{
-                      opacity: isTransforming ? [0, 0, 0.9, 0.5, 0] : 0,
-                      scale: isTransforming ? [0.9, 0.9, 1.15, 1.25, 1.3] : 0.9,
+                      opacity: [0, 0, 0.9, 0.5, 0],
+                      scale: [0.9, 0.9, 1.15, 1.25, 1.3],
                     }}
                     transition={{ 
                       duration: 1.2,
@@ -519,9 +516,10 @@ export function Hero() {
                   {/* Secondary flash ripple */}
                   <motion.div
                     className="absolute inset-0 pointer-events-none rounded-full"
+                    initial={{ opacity: 0, scale: 1 }}
                     animate={{
-                      opacity: isTransforming ? [0, 0, 0.6, 0.3, 0] : 0,
-                      scale: isTransforming ? [1, 1, 1.2, 1.4, 1.5] : 1,
+                      opacity: [0, 0, 0.6, 0.3, 0],
+                      scale: [1, 1, 1.2, 1.4, 1.5],
                     }}
                     transition={{ 
                       duration: 1.2,
