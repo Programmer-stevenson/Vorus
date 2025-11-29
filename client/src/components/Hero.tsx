@@ -709,7 +709,7 @@ export function Hero() {
             transition={{ duration: 1, delay: 0.8 }}
             className="text-base md:text-xl text-[#A9A9AE] leading-relaxed max-w-lg mb-8 md:mb-12"
           >
-            A deep eau de parfum built on smoked woods, bright pepper spice, and glowing amber. Created for those who carry the strength of the forest after dark.
+            A bold eau de parfum of smoked woods, sharp pepper, and warm amber—strength drawn from the Midnight Forest.
           </motion.p>
 
           {/* Features */}
