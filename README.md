@@ -34,18 +34,14 @@ ALL VORUS BRANDED IMAGES WERE ENGINEERED AND CREATED BY ME FROM SCRATCH TO SHOWC
 - Tailwind CSS
 - Lucide React Icons
 
-### Backend
-- Node.js
-- Express
-- MongoDB/Mongoose
-- CORS
+
 
 ## 🛠️ Installation
 
 ### Prerequisites
 - Node.js 18+ 
 - npm or yarn
-- MongoDB (optional - for database features)
+
 
 ### Setup
 
@@ -130,14 +126,6 @@ vorus-clone/
 └── README.md
 ```
 
-## 🎯 API Endpoints
-
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| GET | `/api/health` | Health check |
-| GET | `/api/products` | Get all products |
-| GET | `/api/notes` | Get fragrance notes |
-| GET | `/api/testimonials` | Get testimonials |
 
 ## 🎨 Color Palette
 
